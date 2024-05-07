@@ -18,7 +18,7 @@ export const Layout = () => {
                 </a>
                 <ul className="navbar-nav gap-3">
                   <Link to="/" className="nav-link link-light link-opacity-75-hover">Home</Link>
-                  <Link to="/about" className="nav-link link-light link-opacity-75-hover">About Me</Link>
+                  <Link to="/rag" className="nav-link link-light link-opacity-75-hover">What is RAG?</Link>
                 </ul>
               </div>
           </div>
