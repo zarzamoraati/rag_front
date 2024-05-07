@@ -1,0 +1,27 @@
+:root{
+    --nav-color:#2C3E50;
+    --body-color: #f1ebeb;
+    --letter-color:#EAECEE;
+}
+
+nav{
+    color:var(--letter-color);
+    background-color: var(--nav-color);
+}
+.container{
+    display:flex;
+    justify-content: space-between;
+    
+}
+.navbar-collapse{
+    display: flex;
+    justify-content: space-between;
+  
+
+}
+
+@media screen and (max-width:750px){
+    .navbar-brand{
+        display:none
+    }
+}
