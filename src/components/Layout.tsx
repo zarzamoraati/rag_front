@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 export const Layout = () => {
   return (
-  <div>
+  <div >
      <nav className="navbar navbar-expand-md  w-100"
         style={{marginBottom:"20px"}}>
           <div className="container-fluid ">
@@ -23,7 +23,7 @@ export const Layout = () => {
               </div>
           </div>
         </nav>
-    <div>
+    <div >
       <Outlet/>
     </div>
   </div>
