@@ -11,6 +11,7 @@ export const ragGenerate = () => {
  const [pdfFile,setPdfFile]=useState<PDFFile>({content:null,name:""})
  const [error,setError]=useState("")
  const [modelResponse,setModelResponse]=useState("")
+ const [isGenerate,setGenerate]=useState(false)
 
 //
   const handlePDFUpload=(e:ChangeEvent<HTMLInputElement>)=>{
@@ -40,12 +41,17 @@ export const ragGenerate = () => {
   const handleSubmit=async(e:FormEvent<HTMLFormElement>)=>{
     try{
         e.preventDefault()
+        
+        setModelResponse("")
+        setError("")
+
         if(!question || !pdfFile){
             setError("Fields cannot be empty")
         }
-        setModelResponse("")
+        
         const formdata=new FormData()
         if(pdfFile.content && pdfFile.name){
+            setGenerate(true)
             //CREATE THE REQUEST BODY
             //const pdfBlob = new Blob([pdfFile.content], { type: 'application/pdf' })
             const file = new File([pdfFile.content], pdfFile.name,{type:'application/pdf'})
@@ -61,7 +67,7 @@ export const ragGenerate = () => {
             }
             setPdfFile({content:null,name:""})
             setQuestion("")
-            
+            setGenerate(false)
          }
     }catch(e:unknown){
         if(e instanceof Error){
@@ -69,6 +75,6 @@ export const ragGenerate = () => {
         }
     }
   }
-  return {handlePDFUpload,pdfFile,handleChange,question,handleSubmit,error,modelResponse,setModelResponse}
+  return {handlePDFUpload,pdfFile,handleChange,question,handleSubmit,error,modelResponse,setModelResponse,isGenerate}
   
 }

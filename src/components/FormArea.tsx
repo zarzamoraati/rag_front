@@ -1,13 +1,16 @@
-import { ragGenerate } from "../hook/ragGenerate"
-export const FormComponent = () => {
-  const { handlePDFUpload, handleChange, question, handleSubmit,modelResponse } = ragGenerate()
+import React, { ChangeEvent, FormEvent } from 'react'
 
+interface FormProps {
+    handlePDFUpload:(e:ChangeEvent<HTMLInputElement>)=>void
+    handleChange:(e:ChangeEvent<HTMLInputElement>)=>void
+    handleSubmit:(e:FormEvent<HTMLFormElement>)=>Promise<void>
+    question:string
+    error:string
+}
+
+export const FormArea:React.FC<FormProps> = (props) => {
+    const {handleChange,handlePDFUpload,handleSubmit,question,error}=props
   return (
-    <>
-    <div className="col-6 border rounded-1 p-3">
-      {modelResponse ? <p className="display-6">{modelResponse}</p>:<span>...</span>}
-    </div>
-
     <form 
     className="gap-3 col-5 p-3"
     onSubmit={e=>handleSubmit(e)}
@@ -32,12 +35,11 @@ export const FormComponent = () => {
           onChange={(event) =>handlePDFUpload(event)}
           />
         </div>
+        {error && <p className='display-8' style={{color:"red"}}>{error}</p>}
         <button 
         style={{width:"100%"}}
         type="submit">Ask</button>
      </div>
     </form>
-  </>
   )
 }
-
