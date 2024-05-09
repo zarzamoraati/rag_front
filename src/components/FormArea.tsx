@@ -10,6 +10,7 @@ interface FormProps {
 
 export const FormArea:React.FC<FormProps> = (props) => {
     const {handleChange,handlePDFUpload,handleSubmit,question,error}=props
+    const reg=/^(?!There)/;
   return (
     <form 
     className="gap-3 col-5 p-3"
@@ -35,7 +36,7 @@ export const FormArea:React.FC<FormProps> = (props) => {
           onChange={(event) =>handlePDFUpload(event)}
           />
         </div>
-        {error && <p className='display-8' style={{color:"red"}}>{error}</p>}
+        {reg.test(error) && <p className='display-8' style={{color:"red"}}>{error}</p>}
         <button 
         style={{width:"100%"}}
         type="submit">Ask</button>

@@ -71,7 +71,8 @@ export const ragGenerate = () => {
          }
     }catch(e:unknown){
         if(e instanceof Error){
-        setError(`There was an error at the moment to make the request ${e.message}`)
+        setError(`There was an error at the moment to make the request, try again later. \n Details: ${e.message}`)
+        setGenerate(false)
         }
     }
   }
