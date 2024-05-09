@@ -4,6 +4,7 @@
     --letter-color:#EAECEE;
     --response-area:#e6e9eb;
     --button-question: #f59907;
+    --leter-size:2rem
 }
 
 nav{
@@ -18,8 +19,21 @@ nav{
 .navbar-collapse{
     display: flex;
     justify-content: space-between;
-  
-
+}
+h1,h3{
+    font-weight:bold;
+}
+section{
+    text-align: justify;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3rem;
+}
+p{
+    font-size: var(--leter-size);
 }
 button{
     background-color: var(--button-question);
