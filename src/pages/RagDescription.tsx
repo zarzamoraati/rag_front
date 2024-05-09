@@ -20,7 +20,7 @@ export const RagDescription = () => {
      <p>1.Retrieval: When you provide a prompt or query to an LLM using RAG, the system first retrieves relevant information from an external knowledge source (e.g., Wikipedia articles, databases, custom documents).
       2. **Augmentation:** The retrieved information is then used to enrich the prompt or query before being fed to the LLM. This additional context helps the LLM generate more informed and factually accurate responses.
       3. **Generation:** Finally, the LLM uses its knowledge and the augmented prompt to generate the final text output.</p>
-      <img src="public/images/RAG.png" alt="RAG Diagram"/>
+      <img src="https://safjan.com/images/retrieval_augmented_generation/RAG.png" alt="RAG Diagram"/>
       
       <h3>Benefits of RAG:</h3>
       <p>
